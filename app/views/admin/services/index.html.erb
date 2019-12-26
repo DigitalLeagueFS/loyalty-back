@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Services</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Cost</th>
+      <th>Bonus</th>
+      <th>Company</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @collection.each do |service| %>
+      <tr>
+        <td><%= service.name %></td>
+        <td><%= service.cost %></td>
+        <td><%= service.bonus %></td>
+        <td><%= service.company_id %></td>
+        <td><%= link_to 'Show', [:admin, service] %></td>
+        <td><%= link_to 'Edit', edit_admin_service_path(service) %></td>
+        <td><%= link_to 'Destroy', [:admin, service], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Service', new_admin_service_path %>

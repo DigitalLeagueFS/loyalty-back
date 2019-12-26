@@ -1,0 +1,20 @@
+<%= form_with(model: [:admin, @resource], local: true) do |form| %>
+  <% if @resource.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @resource.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

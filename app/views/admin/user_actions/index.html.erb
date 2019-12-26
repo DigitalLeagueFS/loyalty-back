@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>User Actions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Service</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @collection.each do |admin_user_action| %>
+      <tr>
+        <td><%= admin_user_action.service_id %></td>
+        <td><%= admin_user_action.admin_user_id %></td>
+        <td><%= link_to 'Show', admin_user_action %></td>
+        <td><%= link_to 'Edit', edit_admin_user_action_path(admin_user_action) %></td>
+        <td><%= link_to 'Destroy', admin_user_action, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User Action', new_admin_user_action_path %>

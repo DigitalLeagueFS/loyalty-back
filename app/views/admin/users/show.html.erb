@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Balance:</strong>
+  <%= @resource.balance %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @resource.phone %>
+</p>
+
+<p>
+  <strong>Avatar:</strong>
+  <% if @resource.avatar.attached? %>
+    <%= image_tag @resource.avatar %>
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_admin_user_path(@resource) %> |
+<%= link_to 'Back', admin_users_path %>

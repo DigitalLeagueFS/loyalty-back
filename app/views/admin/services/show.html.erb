@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @resource.name %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @resource.cost %>
+</p>
+
+<p>
+  <strong>Bonus:</strong>
+  <%= @resource.bonus %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @resource.company_id %>
+</p>
+
+<%= link_to 'Edit', edit_admin_service_path(@resource) %> |
+<%= link_to 'Back', admin_services_path %>
